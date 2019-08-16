@@ -33,20 +33,20 @@ public class Calculation {
 
 	public double lvl1 (int level) {
 		double exp = 0;
-		exp += (level * 17);
-		lvl1Sum += (level * 17);
+		exp += Math.round(level * 17);
+		lvl1Sum += Math.round(level * 17);
 		return exp;
 	}
 	public double lvl2 (int level) {
 		double exp = 0;
-		exp += ((level * 15) * (level * 0.12));
-		lvl2Sum += (level * 17);
+		exp += Math.round((level * 15) * (level * 0.12));
+		lvl2Sum += Math.round(level * 17);
 		return exp;
 	}
 	public double lvl3 (int level) {
 		double exp = 0;
-		exp += ((level * 15) * (level * 0.2));
-		lvl3Sum += (level * 17);
+		exp += Math.round((level * 15) * (level * 0.2));
+		lvl3Sum += Math.round(level * 17);
 		return exp;
 	}
 
