@@ -2,35 +2,31 @@ package expcalculator;
 
 public class Calculation {
 	private double exp;
-	private int level;
+	private final int level;
 
 	Calculation(double level) {
 		this.level = 0;
-		this.exp = 0;
+		this.exp = 17;
 	}
 
 	public double getExpCalculated(double level) {
 		if (level == 0) {
 			return exp;
 		}
-
-		if (level <= 10) {
-			exp += 17;
+		else if (level <= 10) {
+			exp += (level * 17);
+			System.out.println(level + "等需要" + (level * 17) + "的經驗值");
 		}
-
-		if (level > 10) {
-			for (int i = 1; i <= level; i++) {
-				exp += 174 + (i * 37);
-			}
+		else if (level > 10 && level <= 17) {
+			exp += ((level * 15) * (level * 0.12));
+			System.out.println(level + "等需要" + ((level * 15) * (level * 0.12)) + "的經驗值");
 		}
-
-		if (level > 17) {
-			for (int i = 1; i <= level; i++) {
-				exp += 174 + (i * 37);
-			}
+		else if (level > 17 && level <= 25) {
+			exp += ((level * 15) * (level * 0.2));
+			System.out.println(level + "等需要" + ((level * 15) * (level * 0.2)) + "的經驗值");
 		}
-
 		return getExpCalculated(level - 1);
+
 
 	}
 
